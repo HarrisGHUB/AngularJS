@@ -1,0 +1,39 @@
+﻿
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+
+
+<div class="container" ng-app="my-employee" ng-controller="employee-controller">
+
+    <input type="search" ng-model="search" />
+
+    <table class="table table-active table-responsive">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="a in Employees |filter:search">
+                <td>{{a.emp_id}}</td>
+                <td>{{a.emp_name}}</td>
+                <td>{{a.emp_salary |currency}}</td>
+                <td>{{a.dept_name}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+</div>
+
+<script src="~/AngularJSapp/Module.js"></script>
+<script src="~/AngularJSapp/Service.js"></script>
+<script src="~/AngularJSapp/Controller.js"></script>
